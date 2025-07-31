@@ -1,8 +1,8 @@
 {
-  "name": "153-funcionarios",
+  "name": "158-projeto",
   "version": "1.0.0",
   "description": "",
-  "main": "funcionarios.js",
+  "main": "src/servidor.js",
   "scripts": {
     "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.11.0",
-    "lodash": "^4.17.21"
+    "express": "^5.1.0"
   }
 }
