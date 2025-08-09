@@ -1,0 +1,67 @@
+<h1>Formulário</h1>
+
+<!-- <form action="http://localhost:3003/usuarios" method="POST"> -->
+<form method="POST">
+  <input type="hidden" name="id" value="3" />
+
+  <div>
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" />
+  </div>
+  <div>
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha" />
+  </div>
+  <div>
+    <label for="bio">Biografia</label>
+    <textarea name="bio" cols="30" rows="10"></textarea>
+  </div>
+  <div>
+    <label for="">Tipo</label>
+    <input type="radio" name="tipo" id="" value="admin" /> Admin
+    <input type="radio" name="tipo" id="" value="regular" /> Regular
+    <input type="radio" name="tipo" id="" value="professor" /> Professor
+  </div>
+  <div><input type="checkbox" name="ativo" id="" /> Ativo</div>
+
+  <select name="estado" id="">
+    <option value="">Selecione</option>
+    <option value="SP">SP</option>
+    <option value="RJ">RJ</option>
+    <option value="MG">MG</option>
+  </select>
+
+  <select name="interesses" multiple id="">
+    <option value="JS">JS</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+  </select>
+
+  <div>
+    <input
+      formaction="http://localhost:3003/usuarios"
+      type="submit"
+      value="Enviar"
+    />
+
+    <input
+      formaction="http://localhost:3003/usuarios/3"
+      type="submit"
+      value="Alterar"
+    />
+  </div>
+</form>
+
+<style>
+  input,
+  textarea,
+  select {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: inline;
+  }
+</style>
