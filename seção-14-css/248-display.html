@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display</title>
+    <style>
+      body {
+        font-size: 40px;
+        color: #fff;
+        background-color: coral;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      div {
+        background-color: seagreen;
+      }
+
+      span {
+        background-color: dodgerblue;
+      }
+
+      li {
+        background-color: purple;
+      }
+
+      div,
+      span,
+      li {
+        width: 50%; /* ignorado em display inline */
+        width: 200px; /* ignorado em display inline */
+        height: 80px; /* ignorado em display inline */
+        padding-top: 30px;
+        text-align: center;
+        /* <display-outside> */
+        /* display: block; */ /* um bloco que gera quebra de linha antes e depois */
+        /* display: inline; */ /* um ou mais blocos em linha que não gera quebra */
+        display: inline-block; /* se comporta como block porem sem quebra */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>Texto 1</div>
+    <span>Texto 2</span>
+    <span>Texto 3</span>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </body>
+</html>

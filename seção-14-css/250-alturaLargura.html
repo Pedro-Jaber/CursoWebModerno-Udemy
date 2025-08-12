@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Altura e Largura</title>
+    <style>
+      /* body e html por padrão tem 100% de width e o menor height possível */
+      html {
+        height: 100%;
+      }
+
+      body {
+        font-size: 40px;
+        background-color: coral;
+        height: 100%;
+        margin: 0;
+      }
+
+      div {
+        background-color: seagreen;
+      }
+
+      span {
+        background-color: dodgerblue;
+      }
+
+      span,
+      div {
+        width: 50%;
+        height: 50%; /* Tamanho relativo dependendo do pai */
+        /* height: 250px; */ /* Tamanho absoluto cresce o pai */
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+  </body>
+</html>

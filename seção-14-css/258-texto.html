@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Texto</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower"
+      rel="stylesheet"
+    />
+    <style>
+      /* ... */
+      * {
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      p {
+        /* valores padrões */
+        font-size: 1em;
+        font-size: 100%;
+        font-size: 16px;
+        font-size: 12pt;
+
+        /* uniddades absolutas */
+        font-size: 100px; /* tamanho do pixel é relativo ao tamanho da tela */
+        font-size: 72pt; /* pontos */
+        font-size: 1in; /* polegadas */
+
+        /* unidades relativas */
+        font-size: 2.5em; /* o tamanho da fonte do pai */
+        font-size: 2.5rem; /* o tamanho da fonte do html */
+        /*font-size: 50vh*/ /* a altura da viewport */
+        /*font-size: 10vw;*/ /* a largura da viewport */
+
+        /* font */
+        /* font-family: monospace; */
+        font-family: Georgia, serif;
+        /* font-family: Verdana, sans-serif; */
+        /* font-family: "Indie Flower", cursive; */
+
+        font-weight: 100;
+        font-style: italic;
+        text-transform: uppercase;
+        /* text-decoration: overline underline line-through; */
+        word-spacing: 10px;
+        letter-spacing: 20px;
+        line-height: 2.5em;
+        text-align: center;
+      }
+
+      .botao {
+        font-size: 28px;
+        text-decoration: none;
+        padding: 10px 30px;
+        border-radius: 25px;
+      }
+
+      .destaque {
+        color: #fff;
+        background-color: #4285f4;
+        box-shadow: inset 5px 5px 8px 2px rgba(255, 255, 255, 0.4),
+          inset -5px -5px 8px 2px rgba(0, 0, 0, 0.3),
+          5px 5px 10px 2px rgba(0, 0, 0, 0.4);
+
+        transition: box-shadow 0.3s ease-out;
+      }
+
+      .destaque:hover {
+        box-shadow: inset 6px 6px 9px 2px rgba(255, 255, 255, 0.35),
+          inset -4px -4px 7px 2px rgba(0, 0, 0, 0.3),
+          3px 3px 7px 1px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p>
+        Que texto
+        <br />legal!!!
+      </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">Google</a>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Float</title>
+    <style>
+      body {
+        background-color: #222;
+      }
+
+      .c1 {
+        background-color: red;
+        float: right;
+      }
+
+      .c2 {
+        background-color: green;
+        clear: right; /* considera o espaço do elemento anterior */
+        float: left;
+      }
+
+      .c3 {
+        background-color: blue;
+        clear: left;
+        float: right;
+      }
+
+      .c4 {
+        background-color: orange;
+        clear: right;
+      }
+
+      div {
+        width: 150px;
+        height: 150px;
+        /* float: right; */ /* coloca os elementos a direita (primeiro elemento mais a direita) */
+        /* float: left; */ /* coloca os elementos a esquerda (primeiro elemento mais a esquerda) */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+  </body>
+</html>
