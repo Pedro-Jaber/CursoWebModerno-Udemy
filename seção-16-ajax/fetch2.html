@@ -3,14 +3,14 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Trabalhando com Eventos #04</title>
+    <title>Fetch API #02</title>
     <link rel='stylesheet' href='css/estilo.css'>
     <style>
         form {
             display: flex;
             flex-direction: column;
         }
-        
+
         form input,
         form select,
         form button {
@@ -21,15 +21,13 @@
 </head>
 
 <body class="conteudo exercicio">
-    <h1>Formulário</h1>
-    <form name="pesquisa" action="http://www.google.com.br/search">
-        <input type="text" name="q" placeholder="Digite o termo...">
-        <select name="hl">
-                <option value="pt-br">Português (Brasil)</option>
-                <option value="en-us">Inglês (Americano)</option>
-            </select>
-        <button wm-submit>Pesquisar</button>
+    <h1>Formulário Via Fetch</h1>
+    <form name="usuarioForm" action="formulario" method="post">
+        <input type="text" name="nome" placeholder="Nome..." />
+        <input type="text" name="sobrenome" placeholder="Sobrenome..." />
+        <button>Salvar</button>
     </form>
+    <div id="resultado"></div>
     <script>
         // ...
     </script>
