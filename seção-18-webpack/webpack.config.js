@@ -1,0 +1,28 @@
+const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = {
+  mode: "development",
+  entry: { main: "./src/principal.js" },
+  output: {
+    filename: "principal.js",
+    path: __dirname + "/public",
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "estilo.css",
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader, // Gera um css minificado separado
+          // "style-loader", // Adiciona CSS a DOM injetando a tag <style>
+          "css-loader", // interpreta @import, url()...
+        ],
+      },
+    ],
+  },
+};
