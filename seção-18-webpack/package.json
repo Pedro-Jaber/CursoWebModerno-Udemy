@@ -4,24 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start_": "webpack-dev-server",
+    "start": "webpack server",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "webpack": "5.101.3",
     "webpack-cli": "6.0.1",
-    "css-loader": "6.10.0",
-    "style-loader": "3.3.4",
-    "mini-css-extract-plugin": "2.9.4"
-  },
-  "aaaaaadep": {
-    "webpack-dev-server": "3.1.4",
-    "file-loader": "1.1.11",
+    "css-loader": "7.1.2",
+    "style-loader": "4.0.0",
+    "mini-css-extract-plugin": "2.9.4",
+    "sass": "1.90.0",
+    "sass-loader": "16.0.5",
     "cross-env": "5.1.5",
-    "optimize-css-assets-webpack-plugin": "4.0.1",
-    "uglifyjs-webpack-plugin": "1.2.5",
+    "terser-webpack-plugin": "5.3.14",
+    "css-minimizer-webpack-plugin": "7.0.2",
+    "webpack-dev-server": "5.2.2"
+  },
+  "nao-precisa": {
     "node-sass": "9.0.0",
-    "sass-loader": "7.0.1"
+    "file-loader": "6.2.0"
   }
 }

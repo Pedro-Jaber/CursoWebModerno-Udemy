@@ -1,0 +1,7 @@
+@use "variaveis" as *;
+
+.botao {
+  background-color: $cor-bj-botao-padrao;
+  color: $cor-botao-padrao;
+  font-size: 1.8rem;
+}

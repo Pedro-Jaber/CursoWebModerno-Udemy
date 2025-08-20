@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Entendendo jQuery</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/jquery.js"></script>
+  </head>
+
+  <body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+      // jQuery("div");
+      $("div").hide(500).show(500).fadeOut(500).fadeIn(500);
+      console.log($("div").get(0));
+      console.log($.isEmptyObject({})); // true
+      console.log($.isEmptyObject({ nome: null })); // false
+      console.log(jQuery.inArray(3, [1, 2, 3, 4, 5])); // 2
+
+      $.fn.fundoVerde = function () {
+        this.css("background-color", "green");
+        return this; // torna a função compatível com a cadeia de chamada
+      };
+
+      $("body").fundoVerde().fadeOut(3000).fadeIn(1000);
+    </script>
+  </body>
+</html>
