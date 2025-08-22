@@ -1,33 +1,157 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Animação #02</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-    <script src='js/jquery.js'></script>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/jquery.js"></script>
     <style>
-        body {
-            position: relative;
-            background-color: #999;
-            color: #000;
-        }
+      body {
+        position: relative;
+        background-color: #999;
+        color: #000;
+      }
 
-        div {
-            position: absolute;
-            display: inline;
-            border: solid 10px #000;
-            padding: 50px;
-            font-size: 3em;
-            background-color: crimson;
-        }
+      div {
+        position: absolute;
+        display: inline;
+        border: solid 10px #000;
+        padding: 50px;
+        font-size: 3em;
+        background-color: crimson;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>Animar!</div>
 
     <script>
-        // ...
+      // CALLBACK
+      function c_alterarLargura(valor, duracao, callback) {
+        $("div").animate({ width: `+=${valor}` }, duracao, callback);
+      }
+
+      function c_moverDiagonal(valor, duracao, callback) {
+        $("div").animate(
+          {
+            top: `+=${valor}`,
+            left: `+=${valor}`,
+          },
+          duracao,
+          callback
+        );
+      }
+
+      function c_girar(valor, duracao, callback) {
+        $("div").animate(
+          {
+            transform: `+=${valor}`,
+          },
+          {
+            step: function (valor) {
+              $(this).css("transform", `rotate(${valor}deg)`);
+            },
+            duration: duracao,
+          },
+          "linear",
+          callback
+        );
+      }
+
+      // c_alterarLargura(300, 200, () => {
+      //   c_alterarLargura(-300, "slow", () => {
+      //     c_moverDiagonal(150, 600, () => {
+      //       c_girar(3300, 1000, () => {});
+      //     });
+      //   });
+      // });
+
+      //
+      // PROMISE
+
+      function p_alterarLargura(valor, duracao, callback) {
+        return new Promise((resolve) => {
+          $("div").animate({ width: `+=${valor}` }, duracao, resolve());
+        });
+      }
+
+      function p_moverDiagonal(valor, duracao, callback) {
+        return new Promise((resolve) => {
+          $("div").animate(
+            {
+              top: `+=${valor}`,
+              left: `+=${valor}`,
+            },
+            duracao,
+            resolve()
+          );
+        });
+      }
+
+      function p_girar(valor, duracao, callback) {
+        return new Promise((resolve) => {
+          $("div").animate(
+            {
+              transform: `+=${valor}`,
+            },
+            {
+              step: function (valor) {
+                $(this).css("transform", `rotate(${valor}deg)`);
+              },
+              duration: duracao,
+            },
+            "linear",
+            callback
+          );
+        });
+      }
+
+      // p_alterarLargura(300, 200)
+      //   .then(() => p_alterarLargura(-300, "slow"))
+      //   .then(() => p_moverDiagonal(300, 600))
+      //   .then(() => p_girar(3300, 1000));
+
+      //
+      // JQUERY CHAIN
+
+      $.fn.alterarLargura = function (valor, duracao) {
+        this.animate({ width: `+=${valor}` }, duracao);
+        return this;
+      };
+
+      $.fn.moverDiagonal = function (valor, duracao) {
+        this.animate(
+          {
+            top: `+=${valor}`,
+            left: `+=${valor}`,
+          },
+          duracao
+        );
+        return this;
+      };
+
+      $.fn.girar = function (valor, duracao) {
+        $("div").animate(
+          {
+            transform: `+=${valor}`,
+          },
+          {
+            step: function (valor) {
+              $(this).css("transform", `rotate(${valor}deg)`);
+            },
+            duration: duracao,
+          },
+          "linear"
+        );
+        return this;
+      };
+
+      $("div")
+        .alterarLargura(300, 200)
+        .alterarLargura(-300, "slow")
+        .moverDiagonal(300, 600)
+        .girar(3300, 1000);
     </script>
-</body>
+  </body>
+</html>
