@@ -1,0 +1,39 @@
+{
+  "name": "projeto-galeria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start_": "webpack-dev-server",
+    "start": "webpack server",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "4.1.1",
+    "copy-webpack-plugin": "4.5.1",
+    "cross-env": "5.1.5",
+    "css-loader": "7.1.2",
+    "font-awesome": "4.7.0",
+    "jquery": "3.3.1",
+    "mini-css-extract-plugin": "2.9.4",
+    "css-minimizer-webpack-plugin": "7.0.2",
+    "popper.js": "1.14.3",
+    "postcss-loader": "2.1.5",
+    "sass": "1.90.0",
+    "sass-loader": "16.0.5",
+    "style-loader": "4.0.0",
+    "terser-webpack-plugin": "5.3.14",
+    "webpack": "5.101.3",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.2"
+  },
+  "nao-precisa": {
+    "optimize-css-assets-webpack-plugin": "4.0.1",
+    "file-loader": "1.1.11",
+    "node-sass": "4.12.0",
+    "uglifyjs-webpack-plugin": "1.2.5"
+  }
+}
