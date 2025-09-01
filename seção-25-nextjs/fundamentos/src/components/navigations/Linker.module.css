@@ -1,0 +1,11 @@
+.linker {
+  padding: 0.75rem;
+  border-radius: 5px;
+  background-color: #0d73f8;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.linker:hover {
+  filter: brightness(0.8);
+}

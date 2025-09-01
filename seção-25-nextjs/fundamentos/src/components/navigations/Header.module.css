@@ -1,0 +1,12 @@
+header.header {
+  display: flex;
+  align-items: center;
+  background-color: #f87f0d;
+  padding: 15px;
+}
+
+.links {
+  margin-left: 2rem;
+  display: flex;
+  gap: 10px;
+}

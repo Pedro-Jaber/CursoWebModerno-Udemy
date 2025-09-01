@@ -1,0 +1,15 @@
+.backHome {
+  background-color: rgb(42, 151, 32);
+  padding: 10px;
+  color: #fff;
+}
+
+.example_container {
+  height: 100%;
+  background-color: rgb(42, 151, 32);
+  padding: 10px;
+}
+
+.example_container div {
+  height: 100%;
+}
