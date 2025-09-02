@@ -14,9 +14,12 @@ export default function Header(props) {
 
         <Linker href="/examples/estiloso" title="Estiloso" />
         <Linker href="/examples/estado" title="Estado" />
+        <Linker href="/examples/estatico" title="Estatico" />
 
         <Linker href="/blog" title="Blog" />
         <Linker href="/blogTags" title="Blog With Tags" />
+
+        <Linker href="/integration/clients" title="Clients" />
       </div>
     </header>
   );
