@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Binding</title>
+    <link rel="stylesheet" href="/css/estilo.css" />
+    <script src="/js/vue.min.js"></script>
+  </head>
+  <body class="exercicio">
+    <div id="app">
+      <p>{{ link }}</p>
+
+      <!-- Não funciona -->
+      <p><a href="{{ link }}">Link?</a></p>
+
+      <!-- Funciona para qualquer propriedade -->
+      <p><a v-bind:href="link">Link</a></p>
+      <p><a :href="link">Link 2</a></p>
+
+      <p>
+        <!-- two way data binding -->
+        <input type="text" v-model="nome" />
+
+        <!-- one way data binding -->
+        <input type="text" :value="nome" />
+        <span>{{ nome }}</span>
+      </p>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          nome: "Maria",
+          link: "http://google.com",
+        },
+        watch: {
+          nome(novoValor, antigoValor) {
+            console.log(novoValor);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

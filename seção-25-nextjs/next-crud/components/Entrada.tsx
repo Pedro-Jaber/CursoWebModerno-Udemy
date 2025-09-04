@@ -8,12 +8,15 @@ interface EntradaProps {
 }
 
 export default function Entrada(props: EntradaProps) {
+  const inputName = props.texto.toLowerCase().replace(" ", "_");
+
   return (
     <div className={`flex flex-col ${props.className}`}>
-      <label htmlFor="" className="mb-2">
+      <label htmlFor={`${inputName}`} className="mb-2">
         {props.texto}
       </label>
       <input
+        name={`${inputName}`}
         type={props.tipo ?? "text"}
         value={props.valor}
         readOnly={props.somenteLeitura}

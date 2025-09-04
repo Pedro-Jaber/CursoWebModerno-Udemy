@@ -6,12 +6,12 @@ import { JSX } from "react";
 
 interface TableProps {
   clientes: Cliente[];
-  clienteSelecionado?: (cliente: Cliente) => void;
-  clienteExcluido?: (cliente: Cliente) => void;
+  selectionarCliente?: (cliente: Cliente) => void;
+  exlcuirCliente?: (cliente: Cliente) => void;
 }
 
 export default function Table(props: TableProps) {
-  const exibirAcoes = props.clienteExcluido || props.clienteSelecionado;
+  const exibirAcoes = props.exlcuirCliente || props.selectionarCliente;
 
   function thead() {
     return (
@@ -54,14 +54,14 @@ export default function Table(props: TableProps) {
   function acoes(cliente: Cliente) {
     return (
       <td className="flex justify-center">
-        {props.clienteSelecionado &&
+        {props.selectionarCliente &&
           buttonAcao(PencilSquare, "text-green-600", () =>
-            props.clienteSelecionado?.(cliente)
+            props.selectionarCliente?.(cliente)
           )}
 
-        {props.clienteExcluido &&
+        {props.exlcuirCliente &&
           buttonAcao(Trash, "text-red-500", () =>
-            props.clienteExcluido?.(cliente)
+            props.exlcuirCliente?.(cliente)
           )}
       </td>
     );
