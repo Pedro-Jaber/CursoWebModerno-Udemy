@@ -1,9 +1,56 @@
 <template>
-  <button class="button">0</button>
+  <button
+    class="button"
+    @click="$emit('onClick', value || label)"
+    :class="{ operation, double, triple }"
+  >
+    {{ label }}
+  </button>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    label: {},
+    operation: { type: Boolean },
+    value: {},
+    double: { type: Boolean },
+    triple: { type: Boolean },
+  },
+};
 </script>
 
-<style></style>
+<style>
+:root {
+  --bg-button: #f0f0f0;
+  --border-button: solid 1px #888;
+}
+
+.button {
+  font-size: 1.4em;
+  background-color: var(--bg-button);
+  border: var(--border-button);
+  outline: none;
+}
+
+.button:active {
+  background-color: hsl(0, 0%, 80%);
+}
+
+.button.double {
+  grid-column: span 2;
+}
+
+.button.triple {
+  grid-column: span 3;
+}
+
+.button.operation {
+  background-color: #ff7b00;
+  color: #fff;
+}
+
+.button.operation:active {
+  background-color: hwb(29 0% 10%);
+}
+</style>
